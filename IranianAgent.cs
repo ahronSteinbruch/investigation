@@ -33,19 +33,30 @@ namespace investigation
             }
         }
 
+        public void addSensor(Sensor s)
+        {
+            sensors.Add(s);
+        }
+
         SensorType GetRandomSensorType(Random rand)
         {
             var values = Enum.GetValues(typeof(SensorType));
             return (SensorType)values.GetValue(rand.Next(values.Length));
         }
 
-        public Dictionary<SensorType,int> Exposed(Sensor s)
+        public bool Exposed(Sensor s)
         {
+
             if (ExposedSencors.ContainsKey(s.Type) && ExposedSencors[s.Type] > 0)
             {
+                Console.WriteLine("congrets your in the right wey");
+                this.addSensor(s);
                 ExposedSencors[s.Type]--;
+                if (this.sensors.Count == this.RekSensors.Count)
+                    Console.WriteLine("all sensores exposed the game end");
             }
-            return this.ExposedSencors;
+            else Console.WriteLine("try agein in your next torn");
+            return !(this.sensors.Count == this.RekSensors.Count);
         }
 
     }

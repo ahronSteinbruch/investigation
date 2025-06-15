@@ -22,8 +22,13 @@ namespace investigation
             Console.ReadLine();
         }
         static void Main(string[] args)
+        {
+            GameManeger maneger = new GameManeger();
+            while (true)
             {
-                testBaseAgent();
-            }   
+            if (maneger.InvestigerTorn)
+                maneger.pley();              
+            }
+        }   
     }
 }

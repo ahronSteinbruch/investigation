@@ -19,7 +19,7 @@ namespace investigation
         Intermediate = 4,
         Highest = 6
     }
-    internal abstract class Sensor
+    internal  class Sensor
     {
         public SensorType Type;
 
