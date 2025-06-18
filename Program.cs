@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DataAccess;
+using MySql.Data.MySqlClient;
+using System;
 
 
 namespace investigation
@@ -8,7 +10,9 @@ namespace investigation
     {
         static void Main()
         {
-            var investigator = new Investigator();
+            DatabaseConnection.GetConnection(); 
+            DatabaseConnection.InitializeDatabase();
+            var investigator = new Investigator(); 
             investigator.StartInvestigation();
         }
     }

@@ -21,10 +21,14 @@ namespace investigation
 
         public virtual void TurnHendler(Sensor s)
         {
+            Console.WriteLine(TurnCounter);
             TurnCounter++;
             TryAttachedsens(s);
-            if(TurnCounter == 10)startAgein();
-            TurnCounter = 0;
+            if (TurnCounter == 10)
+            {
+                startAgein();
+                TurnCounter = 0;
+            }
         }
 
         // init the ExposedSencors add random req sensors type 
