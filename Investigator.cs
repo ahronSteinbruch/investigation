@@ -28,8 +28,9 @@
                 while (!agent.IsExposed())
                 {
                     ShowMenu(agent);
+                    
                     if (!int.TryParse(Console.ReadLine(), out int choice)) continue;
-                    if (!Enum.IsDefined(typeof(SensorType), choice)) continue;
+                    //if (!Enum.IsDefined(typeof(SensorType), choice)) continue;
 
                     var selectedType = (SensorType)choice;
                     var sensor = SensorFactory.CreateSensor(selectedType,agent);
@@ -46,7 +47,6 @@
 
         private void ShowMenu(IranianAgent agent)
         {
-            Console.Clear();
             Console.WriteLine($"Investigating: {agent.GetType().Name}");
             Console.WriteLine($"Correct sensors: {(int)agent.Rank}/{agent.Attachedsensors.Count}");
 
