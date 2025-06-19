@@ -33,7 +33,7 @@ namespace investigation
                 startAgein();            
                 TurnCounter = 0;
             }
-             
+            CallSensors();
         }
         private void RmRandAttachdeSens()
         {

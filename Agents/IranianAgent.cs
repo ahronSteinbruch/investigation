@@ -29,6 +29,7 @@ namespace investigation
                 startAgein();
                 TurnCounter = 0;
             }
+            CallSensors();
         }
 
         // init the ExposedSencors add random req sensors type 

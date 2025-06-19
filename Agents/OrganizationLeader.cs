@@ -21,11 +21,12 @@ namespace investigation
             TurnCounter++;
             TryAttachedsens(s);
             if (ShouldAttack()) CounterAttack();
-            if (TurnCounter == 10)
+            if (TurnCounter == 20)
             {
                 startAgein();
                 TurnCounter = 0;
             }
+            CallSensors();
         }
         private void RmRandAttachdeSens()
         {
